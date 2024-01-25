@@ -1,0 +1,108 @@
+---
+title: 'App Pitch: Feeling old yet?'
+output: ioslides_presentation
+date: "2024-01-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## About this presentation
+
+This presentation is done by a confused student. One part of the description says I should pitch my amazing shiny app, the other tells me that I have to run some code. Now which one is it? In any case, I will do both to be sure to get all points and finish this class. ;)
+
+## The App "Feeling old yet?"
+
+The app I created in shiny is designed to make you feel old. Or young that is, depending on the year you were born in. Are you ready to feel old? Great! Just follow this link to get to my app: <https://thecrazyengineer.shinyapps.io/c09_final_app/>
+
+
+
+## Slide with R Output
+
+Did you know you can add CATS to ggplot (or dogs, for that matter)?? Check out the ggcats-library (or ggdogs) so you can join the fun!
+
+See the awesomeness on the next page!
+
+```{r import, echo = TRUE, message=FALSE, warning=FALSE, eval=FALSE}
+
+library(ggplot2)
+library(ggcats)
+
+some_data <- data.frame(
+  categories = c("1", "2", "3"),
+  mean      = c(8, 3, 5),
+  de        = c(.05, 0.5, 3)
+)
+
+ggplot(some_data, aes(x = categories, y = mean)) +
+  geom_col(fill = "lightskyblue4", color = "black", width = 0.4, size = 0.6) +
+  geom_errorbar(
+    aes(ymin = mean - de, ymax = mean + de), width = 0.1, color = "black", size = 0.6
+  ) +
+  geom_cat(
+    aes(
+      cat = c("pusheen_pc", "grumpy", "nyancat"), 
+      y = c(9, 5, 9)
+    ),
+    size = 4
+  ) +
+  ylim(c(0, 11)) +
+  labs(
+    x = element_blank(),
+    y = "My rating for this class"
+  ) +
+  scale_x_discrete(labels = c("How much I learned", "How much time it took me", "How much fun I had")) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(color = "black", size = 11, face = "bold"),
+    axis.text.y = element_text(color = "black", size = 11),
+    axis.title  = element_text(face = "bold", color = "black", size = 13)
+  )
+
+```
+
+## That's it folks
+
+Thanks for the review and best of success for your own assignment! :)
+```{r plot_input, message=FALSE, warning=FALSE, echo=FALSE}
+library(ggplot2)
+library(ggcats)
+
+some_data <- data.frame(
+  categories = c("1", "2", "3"),
+  mean      = c(8, 3, 5),
+  de        = c(.05, 0.5, 3)
+)
+```
+
+```{r plot, message=FALSE, warning=FALSE}
+
+ggplot(some_data, aes(x = categories, y = mean)) +
+  geom_col(fill = "lightskyblue4", color = "black", width = 0.4, size = 0.6) +
+  geom_errorbar(
+    aes(ymin = mean - de, ymax = mean + de), width = 0.1, color = "black", size = 0.6
+  ) +
+  geom_cat(
+    aes(
+      cat = c("pusheen_pc", "grumpy", "nyancat"), 
+      y = c(9, 5, 9)
+    ),
+    size = 4
+  ) +
+  ylim(c(0, 11)) +
+  labs(
+    x = element_blank(),
+    y = "My rating for this class"
+  ) +
+  scale_x_discrete(labels = c("How much I learned", "How much time it took me", "How much fun I had")) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(color = "black", size = 11, face = "bold"),
+    axis.text.y = element_text(color = "black", size = 11),
+    axis.title  = element_text(face = "bold", color = "black", size = 13)
+  )
+```
+
+
+
